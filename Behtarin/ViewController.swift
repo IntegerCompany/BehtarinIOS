@@ -49,8 +49,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("roomCell", forIndexPath: indexPath) as! CollectionViewCell
-//        
-//        cell.pintImage.image = UIImage(named: "room_frame.jpeg")
+        cell.mainCellAdultCount.text = "x\(hotelRooms[indexPath.row].adultCount)"
+        cell.mainCellChildCount.text = "x\(hotelRooms[indexPath.row].childern.count)"
         
         return cell
     }
@@ -60,16 +60,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     @IBAction func onAddButtonClick(sender: AnyObject) {
         goRoomBuilderController()
-        //addRoom()
     }
     
     func deleteRoom(){
         roomCollectionView.reloadData()
     }
-    func addRoom(){
+    func addRoom(room : HotelRoom){
 
-        let room : HotelRoom = HotelRoom()
-        room.adultCount = 2
         hotelRooms.append(room)
 
     }
@@ -78,8 +75,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.performSegueWithIdentifier("goBuilderScreen", sender: self)
     }
     //MARK: delegate func on back press
-    func addRoomIntoList(){
-        addRoom()
+    func addRoomIntoList(guests : [HotelGuest]){
+        var children :[Int] = [Int]()
+        for var index = 0; index < guests.count; ++index {
+            if guests[index].isChild{
+                children.append(guests[index].age)
+            }
+        }
+        var room : HotelRoom = HotelRoom()
+        room.adultCount = guests[0].count
+        room.childern = children
+        
+        addRoom(room)
+
     }
 
 }

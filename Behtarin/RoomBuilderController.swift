@@ -9,7 +9,7 @@
 import UIKit
 
 class RoomBuilderController : UIViewController , UITableViewDataSource, UIPickerViewDataSource,UIPickerViewDelegate {
-    
+
     @IBOutlet weak var childCounterText: UILabel!
     
     @IBOutlet weak var adultCountPicker: UIPickerView!
@@ -36,7 +36,10 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
         newBackButton.tintColor = UIColor.blackColor()
         self.navigationItem.leftBarButtonItem = newBackButton
         
-        let defaultGuests = HotelGuest(isChild: false,ageOrCount: 2)
+        var defaultGuests : HotelGuest = HotelGuest()
+        defaultGuests.isChild = false
+        defaultGuests.count = 2
+        
         self.hotelGuests.append(defaultGuests)
 
         self.adultCountPicker.selectRow(1, inComponent: 0, animated: false)
@@ -71,7 +74,7 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
     }
     //MARK: did select
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //todo generate some method
+        hotelGuests[0].count = row + 1
     }
     
     @IBAction func onAddChildClick(sender: UIButton) {
@@ -80,7 +83,10 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
     }
     
     func addChildIntoList(){
-        let child = HotelGuest(isChild: true, ageOrCount: 0)
+        var child : HotelGuest = HotelGuest()
+        child.isChild = true
+        child.age = 0
+        
         self.hotelGuests.append(child)
         self.childTableView.reloadData()
         let childCount = hotelGuests.count - 1
@@ -100,7 +106,19 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
         self.navigationController?.popViewControllerAnimated(true)
         let delegate : BackAndSaveDelegate = self.storyboard!.instantiateViewControllerWithIdentifier("SearchViewContriller") as! ViewController
 
-        delegate.addRoomIntoList()
+        delegate.addRoomIntoList(getGuestListFromBuilderPage())
+    }
+    
+    func getGuestListFromBuilderPage()-> [HotelGuest] {
+        var i :Int = 0
+        for guest in hotelGuests {
+            if guest.isChild {
+                let mCell = childTableView.cellForRowAtIndexPath(NSIndexPath(index : 0)) as! GuestTableViewCell
+                hotelGuests[i].age = mCell.ageTextField.text.toInt()!
+            }
+            ++i
+        }
+        return hotelGuests
     }
     
 }

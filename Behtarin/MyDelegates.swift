@@ -10,5 +10,5 @@ import Foundation
 
 protocol BackAndSaveDelegate {
     
-     func addRoomIntoList()
+    func addRoomIntoList(guests : [HotelGuest])
 }

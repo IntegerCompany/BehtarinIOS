@@ -11,12 +11,13 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var pintImage: UIImageView!
-    
+    @IBOutlet weak var mainCellChildCount: UILabel!
+    @IBOutlet weak var mainCellAdultCount: UILabel!
 }
 
 class GuestTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var age: UIView!
+    @IBOutlet weak var ageTextField: UITextField!
     
     @IBOutlet weak var childImage: UIImageView!
 }
@@ -35,20 +36,15 @@ class HotelRoom {
 
 class HotelGuest {
     
-    var isChild :Bool!
-    var age : Int!
-    var count: Int!
+    var isChild :Bool = Bool()
+    var age : Int = Int()
+    var count: Int = Int()
     
-    internal init(isChild : Bool, ageOrCount : Int){
-        self.isChild = isChild
+    internal init(){
         
-        if isChild {
-            self.age = ageOrCount
-        }else{
-            self.count = ageOrCount
-        }
         self.isChild = false
         self.age = 0
-        self.count = 2
+        self.count = 0
+        
     }
 }
