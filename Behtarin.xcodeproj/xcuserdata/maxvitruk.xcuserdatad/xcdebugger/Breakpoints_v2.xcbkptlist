@@ -39,45 +39,77 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Behtarin/RoomBuilderController.swift"
-            timestampString = "459963284.053489"
+            filePath = "Behtarin/ViewController.swift"
+            timestampString = "459974901.20596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "getGuestListFromBuilderPage()"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "addRoomIntoList(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Behtarin/RoomBuilderController.swift"
-            timestampString = "459963795.990199"
+            filePath = "Behtarin/ViewController.swift"
+            timestampString = "459974901.20596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "getGuestListFromBuilderPage()"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "addRoomIntoList(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Behtarin/RoomBuilderController.swift"
-            timestampString = "459964086.383002"
+            filePath = "Behtarin/ViewController.swift"
+            timestampString = "459974901.20596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "getGuestListFromBuilderPage()"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "addRoomIntoList(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Behtarin/ViewController.swift"
+            timestampString = "459974901.20596"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "addRoomIntoList(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Behtarin/ViewController.swift"
+            timestampString = "459974901.20596"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "addRoom(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

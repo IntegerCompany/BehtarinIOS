@@ -10,6 +10,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var roomCount: UILabel!
     @IBOutlet weak var pintImage: UIImageView!
     @IBOutlet weak var mainCellChildCount: UILabel!
     @IBOutlet weak var mainCellAdultCount: UILabel!
@@ -17,8 +18,8 @@ class CollectionViewCell: UICollectionViewCell {
 
 class GuestTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var ageTextField: UITextField!
-    
+    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var childAgeLable: UILabel!
     @IBOutlet weak var childImage: UIImageView!
 }
 

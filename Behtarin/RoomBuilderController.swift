@@ -18,9 +18,12 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
     
     @IBOutlet weak var addChildButton: UIButton!
     
-    internal var hotelGuests : [HotelGuest]!
+    @IBOutlet weak var childAgeEditText: UITextField!
     
+    
+    internal var hotelGuests : [HotelGuest]!
     internal var pickerData : [Int] = [Int]()
+    var delegate: BackAndSaveDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +59,7 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("childCell", forIndexPath: indexPath) as! GuestTableViewCell
+        cell.childAgeLable.text = "\(hotelGuests[indexPath.row + 1].age) years old"
         
         return cell
     }
@@ -75,17 +79,17 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
     //MARK: did select
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         hotelGuests[0].count = row + 1
+        println("piker : \(row + 1)")
     }
     
     @IBAction func onAddChildClick(sender: UIButton) {
-        
         addChildIntoList()
     }
     
     func addChildIntoList(){
         var child : HotelGuest = HotelGuest()
         child.isChild = true
-        child.age = 0
+        child.age = self.childAgeEditText.text.toInt()!
         
         self.hotelGuests.append(child)
         self.childTableView.reloadData()
@@ -104,21 +108,8 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
         // ...
         // Go back to the previous ViewController
         self.navigationController?.popViewControllerAnimated(true)
-        let delegate : BackAndSaveDelegate = self.storyboard!.instantiateViewControllerWithIdentifier("SearchViewContriller") as! ViewController
 
-        delegate.addRoomIntoList(getGuestListFromBuilderPage())
-    }
-    
-    func getGuestListFromBuilderPage()-> [HotelGuest] {
-        var i :Int = 0
-        for guest in hotelGuests {
-            if guest.isChild {
-                let mCell = childTableView.cellForRowAtIndexPath(NSIndexPath(index : 0)) as! GuestTableViewCell
-                hotelGuests[i].age = mCell.ageTextField.text.toInt()!
-            }
-            ++i
-        }
-        return hotelGuests
+        delegate!.addRoomIntoList(hotelGuests)
     }
     
 }
