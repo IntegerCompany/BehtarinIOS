@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		920338BE1B6796B500094A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338BD1B6796B500094A20 /* AppDelegate.swift */; };
+		920338C01B6796B500094A20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338BF1B6796B500094A20 /* ViewController.swift */; };
+		920338C31B6796B500094A20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 920338C11B6796B500094A20 /* Main.storyboard */; };
+		920338C51B6796B500094A20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920338C41B6796B500094A20 /* Images.xcassets */; };
+		920338C81B6796B500094A20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920338C61B6796B500094A20 /* LaunchScreen.xib */; };
+		920338D41B6796B500094A20 /* BehtarinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338D31B6796B500094A20 /* BehtarinTests.swift */; };
+		920338DE1B67A6EF00094A20 /* SimleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DD1B67A6EF00094A20 /* SimleObjects.swift */; };
+		920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DF1B67B0E900094A20 /* RoomBuilderController.swift */; };
+		92923E021B6A12770002A09B /* CosmosStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92923E011B6A12770002A09B /* CosmosStars.swift */; };
+		92C9A61A1B69460700C05D64 /* MyDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9A6191B69460700C05D64 /* MyDelegates.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		920338CE1B6796B500094A20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 920338B01B6796B500094A20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 920338B71B6796B500094A20;
+			remoteInfo = Behtarin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		920338B81B6796B500094A20 /* Behtarin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Behtarin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		920338BC1B6796B500094A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920338BD1B6796B500094A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		920338BF1B6796B500094A20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		920338C21B6796B500094A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		920338C41B6796B500094A20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		920338C71B6796B500094A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		920338CD1B6796B500094A20 /* BehtarinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BehtarinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		920338D21B6796B500094A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920338D31B6796B500094A20 /* BehtarinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehtarinTests.swift; sourceTree = "<group>"; };
+		920338DD1B67A6EF00094A20 /* SimleObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimleObjects.swift; sourceTree = "<group>"; };
+		920338DF1B67B0E900094A20 /* RoomBuilderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomBuilderController.swift; sourceTree = "<group>"; };
+		92923E011B6A12770002A09B /* CosmosStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosStars.swift; sourceTree = "<group>"; };
+		92C9A6191B69460700C05D64 /* MyDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDelegates.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		920338B51B6796B500094A20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		920338CA1B6796B500094A20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		920338AF1B6796B500094A20 = {
+			isa = PBXGroup;
+			children = (
+				920338BA1B6796B500094A20 /* Behtarin */,
+				920338D01B6796B500094A20 /* BehtarinTests */,
+				920338B91B6796B500094A20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		920338B91B6796B500094A20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				920338B81B6796B500094A20 /* Behtarin.app */,
+				920338CD1B6796B500094A20 /* BehtarinTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		920338BA1B6796B500094A20 /* Behtarin */ = {
+			isa = PBXGroup;
+			children = (
+				920338BD1B6796B500094A20 /* AppDelegate.swift */,
+				920338BF1B6796B500094A20 /* ViewController.swift */,
+				920338DF1B67B0E900094A20 /* RoomBuilderController.swift */,
+				920338C11B6796B500094A20 /* Main.storyboard */,
+				920338C41B6796B500094A20 /* Images.xcassets */,
+				920338C61B6796B500094A20 /* LaunchScreen.xib */,
+				920338BB1B6796B500094A20 /* Supporting Files */,
+				920338DD1B67A6EF00094A20 /* SimleObjects.swift */,
+				92C9A6191B69460700C05D64 /* MyDelegates.swift */,
+				92923E011B6A12770002A09B /* CosmosStars.swift */,
+			);
+			path = Behtarin;
+			sourceTree = "<group>";
+		};
+		920338BB1B6796B500094A20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				920338BC1B6796B500094A20 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		920338D01B6796B500094A20 /* BehtarinTests */ = {
+			isa = PBXGroup;
+			children = (
+				920338D31B6796B500094A20 /* BehtarinTests.swift */,
+				920338D11B6796B500094A20 /* Supporting Files */,
+			);
+			path = BehtarinTests;
+			sourceTree = "<group>";
+		};
+		920338D11B6796B500094A20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				920338D21B6796B500094A20 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		920338B71B6796B500094A20 /* Behtarin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 920338D71B6796B500094A20 /* Build configuration list for PBXNativeTarget "Behtarin" */;
+			buildPhases = (
+				920338B41B6796B500094A20 /* Sources */,
+				920338B51B6796B500094A20 /* Frameworks */,
+				920338B61B6796B500094A20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Behtarin;
+			productName = Behtarin;
+			productReference = 920338B81B6796B500094A20 /* Behtarin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		920338CC1B6796B500094A20 /* BehtarinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 920338DA1B6796B500094A20 /* Build configuration list for PBXNativeTarget "BehtarinTests" */;
+			buildPhases = (
+				920338C91B6796B500094A20 /* Sources */,
+				920338CA1B6796B500094A20 /* Frameworks */,
+				920338CB1B6796B500094A20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				920338CF1B6796B500094A20 /* PBXTargetDependency */,
+			);
+			name = BehtarinTests;
+			productName = BehtarinTests;
+			productReference = 920338CD1B6796B500094A20 /* BehtarinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		920338B01B6796B500094A20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = todo;
+				TargetAttributes = {
+					920338B71B6796B500094A20 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					920338CC1B6796B500094A20 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 920338B71B6796B500094A20;
+					};
+				};
+			};
+			buildConfigurationList = 920338B31B6796B500094A20 /* Build configuration list for PBXProject "Behtarin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 920338AF1B6796B500094A20;
+			productRefGroup = 920338B91B6796B500094A20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				920338B71B6796B500094A20 /* Behtarin */,
+				920338CC1B6796B500094A20 /* BehtarinTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		920338B61B6796B500094A20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				920338C31B6796B500094A20 /* Main.storyboard in Resources */,
+				920338C81B6796B500094A20 /* LaunchScreen.xib in Resources */,
+				920338C51B6796B500094A20 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		920338CB1B6796B500094A20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		920338B41B6796B500094A20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92C9A61A1B69460700C05D64 /* MyDelegates.swift in Sources */,
+				920338DE1B67A6EF00094A20 /* SimleObjects.swift in Sources */,
+				920338C01B6796B500094A20 /* ViewController.swift in Sources */,
+				920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */,
+				920338BE1B6796B500094A20 /* AppDelegate.swift in Sources */,
+				92923E021B6A12770002A09B /* CosmosStars.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		920338C91B6796B500094A20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				920338D41B6796B500094A20 /* BehtarinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		920338CF1B6796B500094A20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 920338B71B6796B500094A20 /* Behtarin */;
+			targetProxy = 920338CE1B6796B500094A20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		920338C11B6796B500094A20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				920338C21B6796B500094A20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		920338C61B6796B500094A20 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				920338C71B6796B500094A20 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		920338D51B6796B500094A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		920338D61B6796B500094A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		920338D81B6796B500094A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Behtarin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		920338D91B6796B500094A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Behtarin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		920338DB1B6796B500094A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BehtarinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Behtarin.app/Behtarin";
+			};
+			name = Debug;
+		};
+		920338DC1B6796B500094A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BehtarinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Behtarin.app/Behtarin";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		920338B31B6796B500094A20 /* Build configuration list for PBXProject "Behtarin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				920338D51B6796B500094A20 /* Debug */,
+				920338D61B6796B500094A20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		920338D71B6796B500094A20 /* Build configuration list for PBXNativeTarget "Behtarin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				920338D81B6796B500094A20 /* Debug */,
+				920338D91B6796B500094A20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		920338DA1B6796B500094A20 /* Build configuration list for PBXNativeTarget "BehtarinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				920338DB1B6796B500094A20 /* Debug */,
+				920338DC1B6796B500094A20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 920338B01B6796B500094A20 /* Project object */;
+}
