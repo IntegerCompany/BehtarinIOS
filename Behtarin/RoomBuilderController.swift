@@ -21,31 +21,40 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
     @IBOutlet weak var childAgeEditText: UITextField!
     
     
-    internal var hotelGuests : [HotelGuest]!
+    internal var hotelGuests : [HotelGuest] = [HotelGuest]()
     internal var pickerData : [Int] = [Int]()
+    internal var isEditAction:Bool = false
+    internal var editedRow : Int = 0
+    
     var delegate: BackAndSaveDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //init some func
-        self.hotelGuests = [HotelGuest]()
         self.inserPickerData()
         adultCountPicker.dataSource = self
         adultCountPicker.delegate = self
         
-        //back button action
+        //MARK: customize navigation items
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "backAndSave:")
         newBackButton.tintColor = UIColor.blackColor()
+        let newCancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelAction:")
+        newBackButton.tintColor = UIColor.blackColor()
         self.navigationItem.leftBarButtonItem = newBackButton
-        
-        var defaultGuests : HotelGuest = HotelGuest()
-        defaultGuests.isChild = false
-        defaultGuests.count = 2
-        
-        self.hotelGuests.append(defaultGuests)
+        self.navigationItem.rightBarButtonItem = newCancelButton
+    
+        if isEditAction { self.navigationItem.title = "Room editor" }else{ self.navigationItem.title = "Room builder" }
 
-        self.adultCountPicker.selectRow(1, inComponent: 0, animated: false)
+        if(self.hotelGuests.count == 0){
+            var defaultGuests : HotelGuest = HotelGuest()
+            defaultGuests.isChild = false
+            defaultGuests.count = 2
+            self.hotelGuests.append(defaultGuests)
+        }
+        
+
+        self.adultCountPicker.selectRow(hotelGuests[0].count - 1, inComponent: 0, animated: false)
         
     }
     override func didReceiveMemoryWarning() {
@@ -60,6 +69,8 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("childCell", forIndexPath: indexPath) as! GuestTableViewCell
         cell.childAgeLable.text = "\(hotelGuests[indexPath.row + 1].age) years old"
+        cell.removeButton.addTarget(self, action: "removeChildFromList:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell.removeButton.tag = indexPath.row
         
         return cell
     }
@@ -102,14 +113,21 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
             pickerData.append(i)
         }
     }
+    func removeChildFromList(sender : UIButton){
+        hotelGuests.removeAtIndex(sender.tag + 1)
+        childTableView.reloadData()
+        
+    }
     
     func backAndSave(sender: UIBarButtonItem) {
         // Perform your custom actions
         // ...
         // Go back to the previous ViewController
         self.navigationController?.popViewControllerAnimated(true)
-
-        delegate!.addRoomIntoList(hotelGuests)
+        delegate!.addRoomIntoList(hotelGuests, isEditAction : self.isEditAction, editedRow : self.editedRow)
+    }
+    func cancelAction(sener : AnyObject?){
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 }

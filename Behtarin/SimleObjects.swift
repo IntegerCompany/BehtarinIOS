@@ -10,6 +10,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var roomCount: UILabel!
     @IBOutlet weak var pintImage: UIImageView!
     @IBOutlet weak var mainCellChildCount: UILabel!

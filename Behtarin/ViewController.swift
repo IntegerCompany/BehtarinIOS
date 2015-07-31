@@ -21,7 +21,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         println("MAIN viewDidLoad")
         let room : HotelRoom = HotelRoom()
         room.adultCount = 2
-        room.childern.append(12)
         hotelRooms.append(room)
     }
     
@@ -59,6 +58,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.mainCellChildCount.text = "x\(hotelRooms[indexPath.row].childern.count)"
         let roomNumber = indexPath.row + 1
         cell.roomCount.text = "Room \(roomNumber)"
+        cell.editButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        cell.editButton.tag = indexPath.row
         
         return cell
     }
@@ -67,7 +68,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return hotelRooms.count
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        addCategory()
+        
     }
     @IBAction func onAddButtonClick(sender: AnyObject) {
         goRoomBuilderController()
@@ -77,9 +78,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         hotelRooms.append(room)
         println("MAIN hotelRooms : \(hotelRooms.count)")
     }
+    func editRoom(room :HotelRoom, row : Int){
+        hotelRooms[row] = room
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         secondController = segue.destinationViewController as? RoomBuilderController
         secondController!.delegate = self;
+        if sender is UIButton {
+            secondController!.isEditAction = true
+            let editedRow = (sender as! UIButton).tag
+            secondController!.editedRow = editedRow
+            secondController!.hotelGuests = roomToGuestList(hotelRooms[editedRow])
+        }
     }
 
     //GO ROOM BUILDER SCREEN
@@ -87,7 +97,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.performSegueWithIdentifier("goBuilderScreen", sender: self)
     }
     //MARK: delegate func on back press
-    func addRoomIntoList(guests : [HotelGuest]){
+    func addRoomIntoList(guests : [HotelGuest], isEditAction : Bool, editedRow : Int){
         let mRoom : HotelRoom = HotelRoom()
         mRoom.adultCount = guests[0].count
         
@@ -96,24 +106,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 mRoom.childern.append(guest.age)
             }
         }
-        addRoom(mRoom)
-
-        println("MAIN addRoomIntoList")
+        if isEditAction {
+            editRoom(mRoom, row: editedRow)
+            println("MAIN EditRoomIntoList")
+        }else{
+            addRoom(mRoom)
+            println("MAIN AddRoomIntoList")
+        }
+    }
+    func buttonClicked(sender: UIButton){
+        println("Edit button pressed  \(sender.tag)")
+        self.performSegueWithIdentifier("goBuilderScreen", sender: sender)
     }
     
-    func addCategory() {
-        println("selected")
-        var popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("NewCategory") as! UIViewController
-        var nav = UINavigationController(rootViewController: popoverContent)
-        nav.modalPresentationStyle = UIModalPresentationStyle.Popover
-        var popover = nav.popoverPresentationController
-        popoverContent.preferredContentSize = CGSizeMake(500,600)
-        popover!.sourceView = self.view
-        popover!.sourceRect = CGRectMake(100,100,0,0)
+    func roomToGuestList(room : HotelRoom)->[HotelGuest]{
+        var hotelGuests = [HotelGuest]()
+        let adult = HotelGuest(); adult.isChild = false ; adult.count = room.adultCount
+        hotelGuests.append(adult)
         
-        self.presentViewController(nav, animated: true, completion: nil)
-        
+        for var i = 0; i < room.childern.count; ++i {
+            let child = HotelGuest(); child.isChild = true ; child.age = room.childern[i]
+            hotelGuests.append(child)
+        }
+        return hotelGuests
     }
-    
 }
 

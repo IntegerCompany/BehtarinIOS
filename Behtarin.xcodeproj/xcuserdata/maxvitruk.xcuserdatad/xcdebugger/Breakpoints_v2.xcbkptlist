@@ -40,12 +40,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Behtarin/ViewController.swift"
-            timestampString = "459974901.20596"
+            timestampString = "460028621.257187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "addRoomIntoList(_:)"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "addRoomIntoList(_:isEditAction:editedRow:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -56,12 +56,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Behtarin/ViewController.swift"
-            timestampString = "459974901.20596"
+            timestampString = "460028621.257187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "addRoomIntoList(_:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "addRoomIntoList(_:isEditAction:editedRow:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -72,12 +72,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Behtarin/ViewController.swift"
-            timestampString = "459974901.20596"
+            timestampString = "460028621.257187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "addRoomIntoList(_:)"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "addRoomIntoList(_:isEditAction:editedRow:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -88,28 +88,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Behtarin/ViewController.swift"
-            timestampString = "459974901.20596"
+            timestampString = "460028621.257187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "addRoomIntoList(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Behtarin/ViewController.swift"
-            timestampString = "459974901.20596"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "addRoom(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Behtarin/ViewController.swift"
+            timestampString = "460028621.257187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

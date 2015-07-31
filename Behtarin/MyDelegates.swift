@@ -10,5 +10,9 @@ import Foundation
 
 protocol BackAndSaveDelegate {
     
-    func addRoomIntoList(guests : [HotelGuest])
+    func addRoomIntoList(guests : [HotelGuest], isEditAction : Bool, editedRow : Int)
+}
+
+protocol EditButtonDelegate {
+    func editThisRow(row : Int)
 }
