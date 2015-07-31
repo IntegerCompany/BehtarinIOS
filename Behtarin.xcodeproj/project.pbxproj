@@ -17,6 +17,7 @@
 		920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DF1B67B0E900094A20 /* RoomBuilderController.swift */; };
 		92923E021B6A12770002A09B /* CosmosStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92923E011B6A12770002A09B /* CosmosStars.swift */; };
 		92C9A61A1B69460700C05D64 /* MyDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9A6191B69460700C05D64 /* MyDelegates.swift */; };
+		A6013C88D4BADDC886943028 /* Pods_Behtarin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD9846AD5AD5775D0FE120E /* Pods_Behtarin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AFD4B4B8E6E6FD8DEEC5B33 /* Pods-Behtarin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Behtarin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Behtarin/Pods-Behtarin.release.xcconfig"; sourceTree = "<group>"; };
+		57243E11126CF338DBD36CA9 /* Pods-Behtarin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Behtarin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Behtarin/Pods-Behtarin.debug.xcconfig"; sourceTree = "<group>"; };
 		920338B81B6796B500094A20 /* Behtarin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Behtarin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		920338BC1B6796B500094A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		920338BD1B6796B500094A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		920338DF1B67B0E900094A20 /* RoomBuilderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomBuilderController.swift; sourceTree = "<group>"; };
 		92923E011B6A12770002A09B /* CosmosStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosStars.swift; sourceTree = "<group>"; };
 		92C9A6191B69460700C05D64 /* MyDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDelegates.swift; sourceTree = "<group>"; };
+		9DD9846AD5AD5775D0FE120E /* Pods_Behtarin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Behtarin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6013C88D4BADDC886943028 /* Pods_Behtarin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +69,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FC06C9632771694A667D6C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57243E11126CF338DBD36CA9 /* Pods-Behtarin.debug.xcconfig */,
+				0AFD4B4B8E6E6FD8DEEC5B33 /* Pods-Behtarin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		920338AF1B6796B500094A20 = {
 			isa = PBXGroup;
 			children = (
 				920338BA1B6796B500094A20 /* Behtarin */,
 				920338D01B6796B500094A20 /* BehtarinTests */,
 				920338B91B6796B500094A20 /* Products */,
+				8FC06C9632771694A667D6C5 /* Pods */,
+				ED915B7435CC4DCBB48AEC1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +140,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ED915B7435CC4DCBB48AEC1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DD9846AD5AD5775D0FE120E /* Pods_Behtarin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 920338D71B6796B500094A20 /* Build configuration list for PBXNativeTarget "Behtarin" */;
 			buildPhases = (
+				4D77F83DAF5FE026818CDDCD /* Check Pods Manifest.lock */,
 				920338B41B6796B500094A20 /* Sources */,
 				920338B51B6796B500094A20 /* Frameworks */,
 				920338B61B6796B500094A20 /* Resources */,
+				0F08C953CE371FB6A42CD4AF /* Embed Pods Frameworks */,
+				D301B49D46223BD657A9CBEE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +245,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F08C953CE371FB6A42CD4AF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Behtarin/Pods-Behtarin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D77F83DAF5FE026818CDDCD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D301B49D46223BD657A9CBEE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Behtarin/Pods-Behtarin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		920338B41B6796B500094A20 /* Sources */ = {
@@ -356,20 +431,30 @@
 		};
 		920338D81B6796B500094A20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57243E11126CF338DBD36CA9 /* Pods-Behtarin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Behtarin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		920338D91B6796B500094A20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AFD4B4B8E6E6FD8DEEC5B33 /* Pods-Behtarin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Behtarin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

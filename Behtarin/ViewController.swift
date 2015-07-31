@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import CryptoSwift
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, BackAndSaveDelegate {
 
+    @IBOutlet weak var starsRating: CosmosView!
+    @IBOutlet weak var checkIn: UITextField!
+    @IBOutlet weak var checkOut: UITextField!
+    @IBOutlet weak var hotelName: UITextField!
     @IBOutlet weak var roomCollectionView: UICollectionView!
     @IBOutlet weak var addRoomButton: UIButton!
     
@@ -129,6 +134,94 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             hotelGuests.append(child)
         }
         return hotelGuests
+    }
+    @IBAction func onSearchButoonClick(sender: UIButton) {
+        
+        //self.post(["username":"jameson", "password":"password"], url: "http://localhost:4567/login")
+        
+    }
+    
+    @IBAction func datePickerCall(sender: UITextField) {
+        var funcName:String = "handleDatePickerCheckOut:"
+        if sender == self.checkIn {
+            funcName = "handleDatePickerCheckIn:"
+        }
+        var datePickerView  : UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector(funcName), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func handleDatePickerCheckIn(sender: UIDatePicker) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        checkIn.text = dateFormatter.stringFromDate(sender.date)
+    }
+    func handleDatePickerCheckOut(sender: UIDatePicker) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        checkOut.text = dateFormatter.stringFromDate(sender.date)
+    }
+    
+    func post(urlPath : String) {
+        let url: NSURL = NSURL(string: urlPath)!
+        let session = NSURLSession.sharedSession()
+        
+        var error:NSError?
+        
+        let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
+            
+            if(error != nil) {
+                println(error!.localizedDescription)
+                let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
+                println("Error could not parse JSON: '\(jsonStr)'")
+            }
+            var err: NSError?
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSDictionary
+            
+            if err != nil {
+                // If there is an error parsing JSON, print it to the console
+                println("JSON Error \(err!.localizedDescription)")
+            }else{
+                println("succes !!!")
+            }
+        })
+        task.resume()
+    }
+    
+    func makeURLWithParameters()->String{
+        
+        let API_KEY = "7tuermyqnaf66ujk2dk3rkfk"
+        let mCity:String = hotelName.text
+        let mArrivalDate : String = checkIn.text
+        let mDepartureDate : String = checkOut.text
+        //MARK:HARDCODE
+        let mRoom = 1
+        
+        let apiKey : String  = "&apiKey="
+        let cid : String = "&cid="
+        let locale :String = "&locale=enUS"
+        let customerSessionID : String  = "&customerSessionID=1"
+        let customerIpAddress : String  = "&customerIpAddress=193.93.219.63"
+        let arrivalDate : String  = "&arrivalDate="
+        let currencyCode : String  = "&currencyCode=USD"
+        let departureDate : String  = "&departureDate="
+        let city : String  = "&destinationString="
+        
+        var nowDouble = NSDate().timeIntervalSince1970
+        let toHash : String = "\(apiKey)RyqEsq69\(nowDouble)"
+        //let sigString = MD5(toHash)
+        
+        //let sig : String  = "&sig=\(sigString)"
+        let minorRev : String  = "&minorRev=30"
+        let room : String  = "&room1="
+    
+        
+        
+//        let url : String = "http://api.ean.com/ean-services/rs/hotel/v3/list? \(apiKey)\(API_KEY)\(cid)\(CID)\(sig)\(customerIpAddress)\(currencyCode)\(customerSessionID)\(minorRev)\(locale)\(city)\(mCity)\(arrivalDate)\(mArrivalDate)\(departureDate)\(mDepartureDate)\(room)\(mRoom)"
+        
+        //return url
+        return " "
     }
 }
 
