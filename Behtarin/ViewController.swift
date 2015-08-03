@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     internal var hotelRooms:[HotelRoom] = []
     var secondController: RoomBuilderController?
+    var hotelsResult : NSDictionary = NSDictionary()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,19 +88,32 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         hotelRooms[row] = room
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        secondController = segue.destinationViewController as? RoomBuilderController
-        secondController!.delegate = self;
-        if sender is UIButton {
-            secondController!.isEditAction = true
-            let editedRow = (sender as! UIButton).tag
-            secondController!.editedRow = editedRow
-            secondController!.hotelGuests = roomToGuestList(hotelRooms[editedRow])
+        let sIdentifier = segue.identifier
+        
+        if sIdentifier == "goToHotelList" {
+            var hotelsListController = segue.destinationViewController as? HotelListViewController
+            hotelsListController?.hotels = self.hotelsResult
+            
+        } else if sIdentifier == "goBuilderScreen" {
+            
+            secondController = segue.destinationViewController as? RoomBuilderController
+            secondController!.delegate = self;
+            if sender is UIButton {
+                secondController!.isEditAction = true
+                let editedRow = (sender as! UIButton).tag
+                secondController!.editedRow = editedRow
+                secondController!.hotelGuests = roomToGuestList(hotelRooms[editedRow])
+            }
         }
     }
 
-    //GO ROOM BUILDER SCREEN
+    //MARK:  GO ROOM BUILDER SCREEN
     func goRoomBuilderController(){
         self.performSegueWithIdentifier("goBuilderScreen", sender: self)
+    }
+    //MARK:  GO HOTELS LIST SCREEN
+    func goResultListController(){
+        self.performSegueWithIdentifier("goToHotelList", sender: self)
     }
     //MARK: delegate func on back press
     func addRoomIntoList(guests : [HotelGuest], isEditAction : Bool, editedRow : Int){
@@ -137,7 +151,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     @IBAction func onSearchButoonClick(sender: UIButton) {
         
-        //self.post(["username":"jameson", "password":"password"], url: "http://localhost:4567/login")
+        self.post(makeURLWithParameters())
         
     }
     
@@ -154,22 +168,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func handleDatePickerCheckIn(sender: UIDatePicker) {
         var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         checkIn.text = dateFormatter.stringFromDate(sender.date)
     }
     func handleDatePickerCheckOut(sender: UIDatePicker) {
         var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         checkOut.text = dateFormatter.stringFromDate(sender.date)
     }
     
     func post(urlPath : String) {
-        let url: NSURL = NSURL(string: urlPath)!
+        var url : NSString = urlPath
+        var urlStr : NSString = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        var searchURL : NSURL = NSURL(string: urlStr as String)!
+        println(searchURL)
         let session = NSURLSession.sharedSession()
         
         var error:NSError?
         
-        let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
+        let task = session.dataTaskWithURL(searchURL, completionHandler: {data, response, error -> Void in
             
             if(error != nil) {
                 println(error!.localizedDescription)
@@ -178,12 +195,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             }
             var err: NSError?
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSDictionary
-            
+            self.hotelsResult = jsonResult
+            println("\(jsonResult)")
             if err != nil {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
             }else{
-                println("succes !!!")
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.goResultListController()
+                });
             }
         })
         task.resume()
@@ -192,6 +212,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func makeURLWithParameters()->String{
         
         let API_KEY = "7tuermyqnaf66ujk2dk3rkfk"
+        let CID = "55505"
+        
         let mCity:String = hotelName.text
         let mArrivalDate : String = checkIn.text
         let mDepartureDate : String = checkOut.text
@@ -210,18 +232,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         var nowDouble = NSDate().timeIntervalSince1970
         let toHash : String = "\(apiKey)RyqEsq69\(nowDouble)"
-        //let sigString = MD5(toHash)
+        let sigString = MD5(toHash)
         
-        //let sig : String  = "&sig=\(sigString)"
+        let sig : String  = "&sig=\(sigString)"
         let minorRev : String  = "&minorRev=30"
         let room : String  = "&room1="
     
         
+        let urlConcate : String = "http://api.ean.com/ean-services/rs/hotel/v3/list? \(apiKey) \(API_KEY) \(cid) \(CID) \(sig) \(customerIpAddress) \(currencyCode) \(customerSessionID) \(minorRev) \(locale) \(city) \(mCity) \(arrivalDate) \(mArrivalDate) \(departureDate) \(mDepartureDate) \(room) \(mRoom)"
         
-//        let url : String = "http://api.ean.com/ean-services/rs/hotel/v3/list? \(apiKey)\(API_KEY)\(cid)\(CID)\(sig)\(customerIpAddress)\(currencyCode)\(customerSessionID)\(minorRev)\(locale)\(city)\(mCity)\(arrivalDate)\(mArrivalDate)\(departureDate)\(mDepartureDate)\(room)\(mRoom)"
+        let url = urlConcate.stringByReplacingOccurrencesOfString(" ", withString: "")
         
-        //return url
-        return " "
+        return url
+
+    }
+    func MD5(stringData : String)->String{
+        let data = (stringData as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        let hash = data!.md5()
+        
+        return hash!.hexString
     }
 }
 

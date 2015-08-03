@@ -15,6 +15,7 @@
 		920338D41B6796B500094A20 /* BehtarinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338D31B6796B500094A20 /* BehtarinTests.swift */; };
 		920338DE1B67A6EF00094A20 /* SimleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DD1B67A6EF00094A20 /* SimleObjects.swift */; };
 		920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DF1B67B0E900094A20 /* RoomBuilderController.swift */; };
+		92869BF01B6F8E5800F15967 /* HotelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */; };
 		92923E021B6A12770002A09B /* CosmosStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92923E011B6A12770002A09B /* CosmosStars.swift */; };
 		92C9A61A1B69460700C05D64 /* MyDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9A6191B69460700C05D64 /* MyDelegates.swift */; };
 		A6013C88D4BADDC886943028 /* Pods_Behtarin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD9846AD5AD5775D0FE120E /* Pods_Behtarin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -45,6 +46,7 @@
 		920338D31B6796B500094A20 /* BehtarinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehtarinTests.swift; sourceTree = "<group>"; };
 		920338DD1B67A6EF00094A20 /* SimleObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimleObjects.swift; sourceTree = "<group>"; };
 		920338DF1B67B0E900094A20 /* RoomBuilderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomBuilderController.swift; sourceTree = "<group>"; };
+		92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelListViewController.swift; sourceTree = "<group>"; };
 		92923E011B6A12770002A09B /* CosmosStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosStars.swift; sourceTree = "<group>"; };
 		92C9A6191B69460700C05D64 /* MyDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDelegates.swift; sourceTree = "<group>"; };
 		9DD9846AD5AD5775D0FE120E /* Pods_Behtarin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Behtarin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				920338DD1B67A6EF00094A20 /* SimleObjects.swift */,
 				92C9A6191B69460700C05D64 /* MyDelegates.swift */,
 				92923E011B6A12770002A09B /* CosmosStars.swift */,
+				92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */,
 			);
 			path = Behtarin;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				920338C01B6796B500094A20 /* ViewController.swift in Sources */,
 				920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */,
 				920338BE1B6796B500094A20 /* AppDelegate.swift in Sources */,
+				92869BF01B6F8E5800F15967 /* HotelListViewController.swift in Sources */,
 				92923E021B6A12770002A09B /* CosmosStars.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

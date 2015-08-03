@@ -24,6 +24,29 @@ class GuestTableViewCell: UITableViewCell {
     @IBOutlet weak var childImage: UIImageView!
 }
 
+class HotelCell : UICollectionViewCell {
+    
+    @IBOutlet weak var mainText: UITextView!
+    @IBOutlet weak var ckeckAvailability: UIButton!
+    @IBOutlet weak var readMore: UIButton!
+    @IBOutlet weak var tripAdvisor: UIButton!
+    @IBOutlet weak var likes: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var image: UIImageView!
+}
+class Hotel{
+    
+    var name:String = ""
+    var location : String = ""
+    var image : String = ""
+    var description : String = ""
+    var likes : Int = 0
+    var price : Float = 0.0
+
+    
+}
 class HotelRoom {
     
     var adultCount:Int
