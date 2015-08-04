@@ -26,7 +26,8 @@ class GuestTableViewCell: UITableViewCell {
 
 class HotelCell : UICollectionViewCell {
     
-    @IBOutlet weak var mainText: UITextView!
+
+    @IBOutlet weak var mainText: UILabel!
     @IBOutlet weak var ckeckAvailability: UIButton!
     @IBOutlet weak var readMore: UIButton!
     @IBOutlet weak var tripAdvisor: UIButton!

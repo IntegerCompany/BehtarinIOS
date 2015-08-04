@@ -36,7 +36,9 @@ class HotelListViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "readMoreScreen" {
-            //TODO TODO
+            let singleViewController = segue.destinationViewController as! SingleHotelViewController
+            let rowIndex = (sender as! NSIndexPath).row
+            singleViewController.hotel = hotelSummary[rowIndex] as! NSDictionary
         }
     }
     
