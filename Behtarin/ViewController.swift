@@ -18,28 +18,30 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var roomCollectionView: UICollectionView!
     @IBOutlet weak var addRoomButton: UIButton!
     
-    internal var hotelRooms:[HotelRoom] = []
+    internal static var hotelRooms:[HotelRoom] = []
+    internal static var mArrivalDate = ""
+    internal static var mDepartureDate = ""
+    
     var secondController: RoomBuilderController?
     var hotelsResult : NSDictionary = NSDictionary()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("MAIN viewDidLoad")
+        
         let room : HotelRoom = HotelRoom()
         room.adultCount = 2
-        hotelRooms.append(room)
+        ViewController.hotelRooms.append(room)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        
-        println("MAIN viewDidAppear")
+        self.navigationController?.hidesBarsOnSwipe = false
         
         var xCordinate : Int = 0
-        if hotelRooms.count == 1 {
+        if ViewController.hotelRooms.count == 1 {
             xCordinate = 0
         }else{
-            xCordinate = ((hotelRooms.count - 1) * 210) - 30
+            xCordinate = ((ViewController.hotelRooms.count - 1) * 210) - 30
         }
         
         let point = CGPoint(x: xCordinate, y: 0)
@@ -60,8 +62,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("roomCell", forIndexPath: indexPath) as! CollectionViewCell
-        cell.mainCellAdultCount.text = "x\(hotelRooms[indexPath.row].adultCount)"
-        cell.mainCellChildCount.text = "x\(hotelRooms[indexPath.row].childern.count)"
+        cell.mainCellAdultCount.text = "x\(ViewController.hotelRooms[indexPath.row].adultCount)"
+        cell.mainCellChildCount.text = "x\(ViewController.hotelRooms[indexPath.row].childern.count)"
         let roomNumber = indexPath.row + 1
         cell.roomCount.text = "Room \(roomNumber)"
         cell.editButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
@@ -71,7 +73,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     //how much cell do we have
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hotelRooms.count
+        return ViewController.hotelRooms.count
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
@@ -81,11 +83,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func addRoom(room :HotelRoom){
-        hotelRooms.append(room)
-        println("MAIN hotelRooms : \(hotelRooms.count)")
+        ViewController.hotelRooms.append(room)
+        println("MAIN hotelRooms : \(ViewController.hotelRooms.count)")
     }
     func editRoom(room :HotelRoom, row : Int){
-        hotelRooms[row] = room
+        ViewController.hotelRooms[row] = room
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let sIdentifier = segue.identifier
@@ -102,7 +104,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 secondController!.isEditAction = true
                 let editedRow = (sender as! UIButton).tag
                 secondController!.editedRow = editedRow
-                secondController!.hotelGuests = roomToGuestList(hotelRooms[editedRow])
+                secondController!.hotelGuests = roomToGuestList(ViewController.hotelRooms[editedRow])
             }
         }
     }
@@ -196,7 +198,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var err: NSError?
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSDictionary
             self.hotelsResult = jsonResult
-            println("\(jsonResult)")
+            //println("\(jsonResult)")
             if err != nil {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
@@ -215,10 +217,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let CID = "55505"
         
         let mCity:String = hotelName.text
-        let mArrivalDate : String = checkIn.text
-        let mDepartureDate : String = checkOut.text
-        //MARK:HARDCODE
-        let mRoom = 1
+        ViewController.mArrivalDate = checkIn.text
+        ViewController.mDepartureDate = checkOut.text
+        let mRoom = ViewController.makeRoomString()
         
         let apiKey : String  = "&apiKey="
         let cid : String = "&cid="
@@ -232,21 +233,37 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         var nowDouble = NSDate().timeIntervalSince1970
         let toHash : String = "\(apiKey)RyqEsq69\(nowDouble)"
-        let sigString = MD5(toHash)
+        let sigString = ViewController.MD5(toHash)
         
         let sig : String  = "&sig=\(sigString)"
         let minorRev : String  = "&minorRev=30"
         let room : String  = "&room1="
     
         
-        let urlConcate : String = "http://api.ean.com/ean-services/rs/hotel/v3/list? \(apiKey) \(API_KEY) \(cid) \(CID) \(sig) \(customerIpAddress) \(currencyCode) \(customerSessionID) \(minorRev) \(locale) \(city) \(mCity) \(arrivalDate) \(mArrivalDate) \(departureDate) \(mDepartureDate) \(room) \(mRoom)"
+        let urlConcate : String = "http://api.ean.com/ean-services/rs/hotel/v3/list? \(apiKey) \(API_KEY) \(cid) \(CID) \(sig) \(customerIpAddress) \(currencyCode) \(customerSessionID) \(minorRev) \(locale) \(city) \(mCity) \(arrivalDate) \(ViewController.mArrivalDate) \(departureDate) \(ViewController.mDepartureDate) \(room) \(mRoom)"
         
         let url = urlConcate.stringByReplacingOccurrencesOfString(" ", withString: "")
         
         return url
 
     }
-    func MD5(stringData : String)->String{
+    internal static func makeRoomString() -> String {
+        var roomString : String = ""
+        var iterator = 1
+        for room in ViewController.hotelRooms {
+            roomString += "&room\(iterator)=\(room.adultCount)"
+            if room.childern.count != 0 {
+                roomString += ","
+                for child in room.childern {
+                    roomString += "\(child),"
+                }
+            }
+            iterator++
+        }
+        
+        return roomString
+    }
+    internal static func MD5(stringData : String)->String{
         let data = (stringData as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         let hash = data!.md5()
         

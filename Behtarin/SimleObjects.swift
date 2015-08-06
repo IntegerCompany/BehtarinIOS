@@ -16,14 +16,28 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var mainCellChildCount: UILabel!
     @IBOutlet weak var mainCellAdultCount: UILabel!
 }
-
+class ImageCell : UICollectionViewCell {
+    
+    @IBOutlet weak var image: UIImageView!
+}
 class GuestTableViewCell: UITableViewCell {
     
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var childAgeLable: UILabel!
     @IBOutlet weak var childImage: UIImageView!
 }
-
+class RoomCell : UICollectionViewCell {
+    
+    @IBOutlet weak var bedsList: UILabel!
+    @IBOutlet weak var bedCount: UILabel!
+    @IBOutlet weak var adultCount: UILabel!
+    @IBOutlet weak var bookButton: UIButton!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var hidenPrice: UILabel!
+}
 class HotelCell : UICollectionViewCell {
     
 
