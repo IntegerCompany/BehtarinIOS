@@ -9,7 +9,7 @@
 import UIKit
 import CryptoSwift
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, BackAndSaveDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, BackAndSaveDelegate, LoadCallBack  {
 
     @IBOutlet weak var starsRating: CosmosView!
     @IBOutlet weak var checkIn: UITextField!
@@ -25,8 +25,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var secondController: RoomBuilderController?
     var hotelsResult : NSDictionary = NSDictionary()
     
+    var mLoader : Loader!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mLoader = Loader(callBack: self)
         
         let room : HotelRoom = HotelRoom()
         room.adultCount = 2
@@ -57,6 +61,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK : LOAD DID FINISH
+    func loadDidFinish(sender: AnyObject) {
+        
+        self.hotelsResult = sender as! NSDictionary
+        self.goResultListController()
     }
     //return custom cell
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -153,7 +164,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     @IBAction func onSearchButoonClick(sender: UIButton) {
         
-        self.post(makeURLWithParameters())
+        self.mLoader.getFromUrl(makeURLWithParameters())
         
     }
     
@@ -197,13 +208,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             }
             var err: NSError?
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSDictionary
-            self.hotelsResult = jsonResult
+            
             //println("\(jsonResult)")
             if err != nil {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
             }else{
                 dispatch_async(dispatch_get_main_queue(), {
+                    self.hotelsResult = jsonResult
                     self.goResultListController()
                 });
             }

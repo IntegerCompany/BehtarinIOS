@@ -11,20 +11,9 @@ import XCTest
 
 class BehtarinTests: XCTestCase {
     
-    var vc : ViewController!
-    var dateString = ""
-    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        let date = NSDate()
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        self.dateString = dateFormatter.stringFromDate(date)
-    
-        var storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
-        vc = storyboard.instantiateViewControllerWithIdentifier("SearchViewContriller") as! ViewController
-        vc.loadView()
     }
     
     override func tearDown() {
@@ -42,10 +31,6 @@ class BehtarinTests: XCTestCase {
         self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
-    }
-    
-    func testDate() {
-        XCTAssertEqual(self.dateString, vc.checkIn.text, "Hello")
     }
     
 }
