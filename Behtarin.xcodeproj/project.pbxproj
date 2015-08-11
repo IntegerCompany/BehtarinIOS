@@ -17,6 +17,7 @@
 		9271B8641B79F090003370CD /* HotelGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8631B79F090003370CD /* HotelGridViewController.swift */; };
 		9271B8661B79F12A003370CD /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8651B79F12A003370CD /* TabController.swift */; };
 		9271B8681B7A0F60003370CD /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8671B7A0F5F003370CD /* FilterController.swift */; };
+		9271B86A1B7A3FCD003370CD /* FileterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8691B7A3FCD003370CD /* FileterViewController.swift */; };
 		9275A4061B768FEA006F4847 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275A4051B768FEA006F4847 /* Loader.swift */; };
 		927E08DA1B71F7C40010AF92 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E08D91B71F7C40010AF92 /* RoomListViewController.swift */; };
 		92869BF01B6F8E5800F15967 /* HotelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */; };
@@ -55,6 +56,7 @@
 		9271B8631B79F090003370CD /* HotelGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelGridViewController.swift; sourceTree = "<group>"; };
 		9271B8651B79F12A003370CD /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		9271B8671B7A0F5F003370CD /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
+		9271B8691B7A3FCD003370CD /* FileterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileterViewController.swift; sourceTree = "<group>"; };
 		9275A4051B768FEA006F4847 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		927E08D91B71F7C40010AF92 /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelListViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				9271B8631B79F090003370CD /* HotelGridViewController.swift */,
 				9271B8651B79F12A003370CD /* TabController.swift */,
 				9271B8671B7A0F5F003370CD /* FilterController.swift */,
+				9271B8691B7A3FCD003370CD /* FileterViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				920338BE1B6796B500094A20 /* AppDelegate.swift in Sources */,
 				92869BF01B6F8E5800F15967 /* HotelListViewController.swift in Sources */,
 				92923E021B6A12770002A09B /* CosmosStars.swift in Sources */,
+				9271B86A1B7A3FCD003370CD /* FileterViewController.swift in Sources */,
 				9275A4061B768FEA006F4847 /* Loader.swift in Sources */,
 				928B212F1B73695C00ABE2B1 /* ImageGallaryViewController.swift in Sources */,
 				9299BF261B6FFB7100599753 /* SingleHotelViewController.swift in Sources */,

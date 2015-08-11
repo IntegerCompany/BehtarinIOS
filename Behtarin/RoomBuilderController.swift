@@ -22,7 +22,7 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
     
     
     internal var hotelGuests : [HotelGuest] = [HotelGuest]()
-    internal var pickerData : [Int] = [Int]()
+    var pickerData : [Int] = [Int]()
     internal var isEditAction:Bool = false
     internal var editedRow : Int = 0
     

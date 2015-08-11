@@ -40,6 +40,33 @@ class SingleHotelViewController: UIViewController, UIScrollViewDelegate, UIColle
             roomController.hotelID = String(self.hotel["hotelId"] as! Int)
         }
     }
+    @IBAction func addToWishList(sender: AnyObject) {
+        var iterator = 0
+        var isInArray : Bool = false
+        let def = NSUserDefaults.standardUserDefaults()
+        var key = "hotelsWishList"
+        var hotelList = [Int]()
+        let hotelid = self.hotel["hotelId"] as! Int
+        if let testArray : [Int] = def.objectForKey(key) as? [Int]  {
+            hotelList = (testArray as [Int])
+            for id in hotelList {
+                if id == hotelid {
+                    hotelList.removeAtIndex(iterator)
+                    println("REMOVED AT INDEX \(iterator)")
+                    isInArray = true
+                }
+                ++iterator
+            }
+            if !isInArray {
+                hotelList.append(hotelid)
+                println("ADDED AT INDEX \(iterator)")
+            }
+            def.setObject(hotelList, forKey: key)
+        }
+        println("\(hotelList.count)")
+        def.synchronize()
+    
+    }
 
     @IBAction func goImageGallary(sender: UIButton) {
         
