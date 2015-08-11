@@ -32,8 +32,13 @@ class SingleHotelViewController: UIViewController, UIScrollViewDelegate, UIColle
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       let imageGalleryController = segue.destinationViewController as! ImageGallaryViewController
-        imageGalleryController.imagesArray = sender as! NSArray
+        if segue.identifier == "goImageGallery" {
+            let imageGalleryController = segue.destinationViewController as! ImageGallaryViewController
+            imageGalleryController.imagesArray = sender as! NSArray
+        }else{
+            let roomController = segue.destinationViewController as! RoomListViewController
+            roomController.hotelID = String(self.hotel["hotelId"] as! Int)
+        }
     }
 
     @IBAction func goImageGallary(sender: UIButton) {

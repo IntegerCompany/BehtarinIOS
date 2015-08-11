@@ -1,30 +1,29 @@
 //
-//  HotelListViewController.swift
+//  HotelGridViewController.swift
 //  Behtarin
 //
-//  Created by Max Vitruk on 03.08.15.
+//  Created by Max Vitruk on 11.08.15.
 //  Copyright (c) 2015 todo. All rights reserved.
 //
 
 import UIKit
 
-let cellID = "hotelCell"
-let baseUrl = "http://images.travelnow.com"
-let sufix = "b.jpg"
-let tripSufix = "png"
-
-class HotelListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SortDelegate {
+class HotelGridViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SortDelegate {
     
     var hotels : NSDictionary = NSDictionary()
     var hotelSummary : NSArray = NSArray()
-
-    @IBOutlet weak var collectionView: UICollectionView!
+    let cellID = "hotelListCell"
+    
     @IBOutlet weak var errorMassage: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hotelSummary = (self.tabBarController as! TabController).hotelSummary
         self.navigationController?.hidesBarsOnSwipe = true
+        
+        var filter = UIBarButtonItem(title: "Filter", style: .Plain, target: self, action: "addCategory:")
+        self.navigationItem.rightBarButtonItem = filter
         
         if hotelSummary.count == 0 {
             self.errorMassage.hidden = false
@@ -32,23 +31,18 @@ class HotelListViewController: UIViewController, UICollectionViewDataSource, UIC
             self.errorMassage.hidden = true
         }
     }
-    override func viewWillAppear(animated: Bool) {
+    
+    override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.hotelSummary = (self.tabBarController as! TabController).hotelSummary
-        self.collectionView.reloadData()
-    }
+        tableView.reloadData()
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    //return custom cell
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! HotelCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! HotelListCell
         var i = indexPath.row
-    
+        
         let subUrl = (hotelSummary[i] as! NSDictionary)["thumbNailUrl"] as? String
         var strUrl = baseUrl + subUrl!
         let indexLenght = count(strUrl) - 5
@@ -59,13 +53,13 @@ class HotelListViewController: UIViewController, UICollectionViewDataSource, UIC
         getDataFromUrl(url!) { data in
             dispatch_async(dispatch_get_main_queue()) {
                 println("Finished downloading \"\(url!.lastPathComponent!.stringByDeletingPathExtension)\".")
-                cell.image.image = UIImage(data: data!)
+                cell.hotelImage.image = UIImage(data: data!)
             }
         }
         
         cell.name.text = (hotelSummary[i] as! NSDictionary)["name"] as? String
         cell.mainText.text = (hotelSummary[i] as! NSDictionary)["shortDescription"] as? String
-
+        
         let address = (hotelSummary[i] as! NSDictionary)["address1"] as? String
         let city = (hotelSummary[i] as! NSDictionary)["city"] as? String
         cell.location.text = city! + ", " + address!
@@ -81,26 +75,26 @@ class HotelListViewController: UIViewController, UICollectionViewDataSource, UIC
         cell.readMore.addTarget(self, action: "readMoreAction:", forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell
+
     }
-    //MARK : SORT DELEGATE 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        (self.tabBarController as! TabController).readMore(indexPath.row)
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.hotelSummary.count
+    }
+    //MARK : SORT DELEGATE
     func sortByOptions(array: NSArray) {
         (self.tabBarController as! TabController).hotelSummary = array
         self.hotelSummary = array
-        self.collectionView.reloadData()
-        self.collectionView.contentOffset = CGPointMake(0, 0 - self.collectionView.contentInset.top)
-    }
-    //how much cell do we have
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.hotelSummary.count
+        self.tableView.reloadData()
+        self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top)
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        (self.tabBarController as! TabController).readMore(indexPath.row)
-    }
     func readMoreAction(sender:UIButton){
         (self.tabBarController as! TabController).readMore(sender.tag)
     }
-    
+
     func checkAvalibilityAction(sender:UIButton){
         (self.tabBarController as! TabController).checkAvalibility(sender.tag)
     }
@@ -110,5 +104,5 @@ class HotelListViewController: UIViewController, UICollectionViewDataSource, UIC
             completion(data: data)
             }.resume()
     }
-}
 
+}

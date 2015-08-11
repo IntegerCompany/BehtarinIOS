@@ -51,6 +51,23 @@ class HotelCell : UICollectionViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var image: UIImageView!
 }
+
+class HotelListCell : UITableViewCell {
+    
+    
+    @IBOutlet weak var mainText: UILabel!
+    @IBOutlet weak var ckeckAvailability: UIButton!
+    @IBOutlet weak var readMore: UIButton!
+    @IBOutlet weak var tripAdvisor: UIButton!
+    @IBOutlet weak var likes: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var hotelImage: UIImageView!
+
+    
+}
+
 class Hotel{
     
     var name:String = ""

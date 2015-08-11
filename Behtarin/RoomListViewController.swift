@@ -30,7 +30,7 @@ class RoomListViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewWillAppear(animated)
         
     }
-    
+
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
     }

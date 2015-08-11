@@ -43,6 +43,7 @@ class RoomBuilderController : UIViewController , UITableViewDataSource, UIPicker
         newBackButton.tintColor = UIColor.blackColor()
         self.navigationItem.leftBarButtonItem = newBackButton
         self.navigationItem.rightBarButtonItem = newCancelButton
+
     
         if isEditAction { self.navigationItem.title = "Room editor" }else{ self.navigationItem.title = "Room builder" }
 

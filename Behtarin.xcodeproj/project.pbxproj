@@ -11,10 +11,12 @@
 		920338C31B6796B500094A20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 920338C11B6796B500094A20 /* Main.storyboard */; };
 		920338C51B6796B500094A20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920338C41B6796B500094A20 /* Images.xcassets */; };
 		920338C81B6796B500094A20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920338C61B6796B500094A20 /* LaunchScreen.xib */; };
-		920338D41B6796B500094A20 /* BehtarinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338D31B6796B500094A20 /* BehtarinTests.swift */; };
 		920338DE1B67A6EF00094A20 /* SimleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DD1B67A6EF00094A20 /* SimleObjects.swift */; };
 		920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DF1B67B0E900094A20 /* RoomBuilderController.swift */; };
 		9268E4E01B7633D600BA2945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338BF1B6796B500094A20 /* ViewController.swift */; };
+		9271B8641B79F090003370CD /* HotelGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8631B79F090003370CD /* HotelGridViewController.swift */; };
+		9271B8661B79F12A003370CD /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8651B79F12A003370CD /* TabController.swift */; };
+		9271B8681B7A0F60003370CD /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8671B7A0F5F003370CD /* FilterController.swift */; };
 		9275A4061B768FEA006F4847 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275A4051B768FEA006F4847 /* Loader.swift */; };
 		927E08DA1B71F7C40010AF92 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E08D91B71F7C40010AF92 /* RoomListViewController.swift */; };
 		92869BF01B6F8E5800F15967 /* HotelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */; };
@@ -50,6 +52,9 @@
 		920338D31B6796B500094A20 /* BehtarinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehtarinTests.swift; sourceTree = "<group>"; };
 		920338DD1B67A6EF00094A20 /* SimleObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimleObjects.swift; sourceTree = "<group>"; };
 		920338DF1B67B0E900094A20 /* RoomBuilderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomBuilderController.swift; sourceTree = "<group>"; };
+		9271B8631B79F090003370CD /* HotelGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelGridViewController.swift; sourceTree = "<group>"; };
+		9271B8651B79F12A003370CD /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		9271B8671B7A0F5F003370CD /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		9275A4051B768FEA006F4847 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		927E08D91B71F7C40010AF92 /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelListViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +162,9 @@
 				9299BF251B6FFB7100599753 /* SingleHotelViewController.swift */,
 				927E08D91B71F7C40010AF92 /* RoomListViewController.swift */,
 				928B212E1B73695C00ABE2B1 /* ImageGallaryViewController.swift */,
+				9271B8631B79F090003370CD /* HotelGridViewController.swift */,
+				9271B8651B79F12A003370CD /* TabController.swift */,
+				9271B8671B7A0F5F003370CD /* FilterController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -338,17 +346,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9271B8661B79F12A003370CD /* TabController.swift in Sources */,
 				927E08DA1B71F7C40010AF92 /* RoomListViewController.swift in Sources */,
 				92C9A61A1B69460700C05D64 /* MyDelegates.swift in Sources */,
 				920338DE1B67A6EF00094A20 /* SimleObjects.swift in Sources */,
 				9268E4E01B7633D600BA2945 /* ViewController.swift in Sources */,
 				920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */,
+				9271B8641B79F090003370CD /* HotelGridViewController.swift in Sources */,
 				920338BE1B6796B500094A20 /* AppDelegate.swift in Sources */,
 				92869BF01B6F8E5800F15967 /* HotelListViewController.swift in Sources */,
 				92923E021B6A12770002A09B /* CosmosStars.swift in Sources */,
 				9275A4061B768FEA006F4847 /* Loader.swift in Sources */,
 				928B212F1B73695C00ABE2B1 /* ImageGallaryViewController.swift in Sources */,
 				9299BF261B6FFB7100599753 /* SingleHotelViewController.swift in Sources */,
+				9271B8681B7A0F60003370CD /* FilterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				920338D41B6796B500094A20 /* BehtarinTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

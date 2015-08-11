@@ -16,3 +16,7 @@ protocol BackAndSaveDelegate {
 protocol EditButtonDelegate {
     func editThisRow(row : Int)
 }
+
+protocol SortDelegate {
+   func sortByOptions(array : NSArray)
+}

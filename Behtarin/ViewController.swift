@@ -104,7 +104,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let sIdentifier = segue.identifier
         
         if sIdentifier == "goToHotelList" {
-            var hotelsListController = segue.destinationViewController as? HotelListViewController
+            var hotelsListController = segue.destinationViewController as? TabController
             hotelsListController?.hotels = self.hotelsResult
             
         } else if sIdentifier == "goBuilderScreen" {
