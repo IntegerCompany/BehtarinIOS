@@ -1,4 +1,3 @@
-general:
 test:
-minitest_globs:
-- BehtarinTests/BehtarinTests.swift
+    minitest_globs:
+        - BehtarinTests/BehtarinTests.swift
