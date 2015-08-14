@@ -468,7 +468,6 @@
         <!--Hotel Grid View Controller-->
         <scene sceneID="EQz-sW-OW4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tjo-iF-hdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="hotelGrid" id="A6Y-mv-G5d" customClass="HotelGridViewController" customModule="Behtarin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uZv-BN-71C"/>
@@ -680,13 +679,13 @@
                         <outlet property="tableView" destination="1ss-Pr-x48" id="jFG-Tj-5K6"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tjo-iF-hdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2638.5" y="-1123.5"/>
         </scene>
         <!--Tab Controller-->
         <scene sceneID="Bid-bc-tE2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TKq-pV-XLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="aju-PD-5jM" customClass="TabController" customModule="Behtarin" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xGC-SP-BxF">
@@ -701,6 +700,7 @@
                         <segue destination="NW3-yS-crH" kind="show" identifier="checkAvailability1" id="Lyw-31-sic"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKq-pV-XLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1913" y="-528"/>
         </scene>

@@ -9,12 +9,12 @@
 import UIKit
 import CryptoSwift
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, BackAndSaveDelegate, LoadCallBack  {
+public class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, BackAndSaveDelegate, LoadCallBack  {
 
     @IBOutlet weak var starsRating: CosmosView!
     @IBOutlet weak var checkIn: UITextField!
     @IBOutlet weak var checkOut: UITextField!
-    @IBOutlet weak var hotelName: UITextField!
+    @IBOutlet weak public var hotelName: UITextField!
     @IBOutlet weak var roomCollectionView: UICollectionView!
     @IBOutlet weak var addRoomButton: UIButton!
     
@@ -27,7 +27,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var mLoader : Loader!
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         mLoader = Loader(callBack: self)
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         ViewController.hotelRooms.append(room)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         self.navigationController?.hidesBarsOnSwipe = false
         
@@ -53,24 +53,24 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         roomCollectionView.setContentOffset(point, animated: true)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         println("MAIN viewWillAppear")
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     //MARK : LOAD DID FINISH
-    func loadDidFinish(sender: AnyObject) {
+    public func loadDidFinish(sender: AnyObject) {
         
         self.hotelsResult = sender as! NSDictionary
         self.goResultListController()
     }
     //return custom cell
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("roomCell", forIndexPath: indexPath) as! CollectionViewCell
         cell.mainCellAdultCount.text = "x\(ViewController.hotelRooms[indexPath.row].adultCount)"
@@ -83,10 +83,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     //how much cell do we have
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ViewController.hotelRooms.count
     }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
     }
     @IBAction func onAddButtonClick(sender: AnyObject) {
@@ -100,7 +100,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func editRoom(room :HotelRoom, row : Int){
         ViewController.hotelRooms[row] = room
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let sIdentifier = segue.identifier
         
         if sIdentifier == "goToHotelList" {
@@ -125,7 +125,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.performSegueWithIdentifier("goBuilderScreen", sender: self)
     }
     //MARK:  GO HOTELS LIST SCREEN
-    func goResultListController(){
+    public func goResultListController(){
         self.performSegueWithIdentifier("goToHotelList", sender: self)
     }
     //MARK: delegate func on back press
@@ -223,15 +223,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         task.resume()
     }
     
-    func makeURLWithParameters()->String{
+    public func makeURLWithParameters()->String{
         
         let API_KEY = "7tuermyqnaf66ujk2dk3rkfk"
         let CID = "55505"
+//        
+//        let mCity:String = hotelName.text
+//        ViewController.mArrivalDate = checkIn.text
+//        ViewController.mDepartureDate = checkOut.text
+//        let mRoom = ViewController.makeRoomString()
         
-        let mCity:String = hotelName.text
-        ViewController.mArrivalDate = checkIn.text
-        ViewController.mDepartureDate = checkOut.text
+        let mCity:String = "London"
+        ViewController.mArrivalDate = "08/20/2015"
+        ViewController.mDepartureDate = "08/20/2015"
         let mRoom = ViewController.makeRoomString()
+
         
         let apiKey : String  = "&apiKey="
         let cid : String = "&cid="

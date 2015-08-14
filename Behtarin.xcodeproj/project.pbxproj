@@ -13,7 +13,6 @@
 		920338C81B6796B500094A20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920338C61B6796B500094A20 /* LaunchScreen.xib */; };
 		920338DE1B67A6EF00094A20 /* SimleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DD1B67A6EF00094A20 /* SimleObjects.swift */; };
 		920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338DF1B67B0E900094A20 /* RoomBuilderController.swift */; };
-		9268E4E01B7633D600BA2945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338BF1B6796B500094A20 /* ViewController.swift */; };
 		9271B8641B79F090003370CD /* HotelGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8631B79F090003370CD /* HotelGridViewController.swift */; };
 		9271B8661B79F12A003370CD /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8651B79F12A003370CD /* TabController.swift */; };
 		9271B8681B7A0F60003370CD /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271B8671B7A0F5F003370CD /* FilterController.swift */; };
@@ -25,6 +24,8 @@
 		92923E021B6A12770002A09B /* CosmosStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92923E011B6A12770002A09B /* CosmosStars.swift */; };
 		9299BF261B6FFB7100599753 /* SingleHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299BF251B6FFB7100599753 /* SingleHotelViewController.swift */; };
 		92C9A61A1B69460700C05D64 /* MyDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9A6191B69460700C05D64 /* MyDelegates.swift */; };
+		92D75BCB1B7DFB5C00CB7DB5 /* BehtarinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338D31B6796B500094A20 /* BehtarinTests.swift */; };
+		92D75BCE1B7DFE3300CB7DB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338BF1B6796B500094A20 /* ViewController.swift */; };
 		A6013C88D4BADDC886943028 /* Pods_Behtarin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD9846AD5AD5775D0FE120E /* Pods_Behtarin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -349,11 +350,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D75BCE1B7DFE3300CB7DB5 /* ViewController.swift in Sources */,
 				9271B8661B79F12A003370CD /* TabController.swift in Sources */,
 				927E08DA1B71F7C40010AF92 /* RoomListViewController.swift in Sources */,
 				92C9A61A1B69460700C05D64 /* MyDelegates.swift in Sources */,
 				920338DE1B67A6EF00094A20 /* SimleObjects.swift in Sources */,
-				9268E4E01B7633D600BA2945 /* ViewController.swift in Sources */,
 				920338E01B67B0E900094A20 /* RoomBuilderController.swift in Sources */,
 				9271B8641B79F090003370CD /* HotelGridViewController.swift in Sources */,
 				920338BE1B6796B500094A20 /* AppDelegate.swift in Sources */,
@@ -371,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D75BCB1B7DFB5C00CB7DB5 /* BehtarinTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

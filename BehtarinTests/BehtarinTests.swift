@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import Behtarin
 
 class BehtarinTests: XCTestCase {
     
@@ -21,15 +22,42 @@ class BehtarinTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testViewController(){
+        let vc = ViewController() as ViewController
+        vc.viewDidLoad()
+        vc.viewWillAppear(true)
+        testAsynchronousURLConnection(vc.makeURLWithParameters())
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
+    func testAsynchronousURLConnection(url : String) {
+        let URL = NSURL(string: url)!
+        let expectation = expectationWithDescription("GET \(URL)")
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(URL) { data, response, error in
+            XCTAssertNotNil(data, "data should not be nil")
+            XCTAssertNil(error, "error should be nil")
+            
+            if let HTTPResponse = response as? NSHTTPURLResponse,
+                responseURL = HTTPResponse.URL,
+                MIMEType = HTTPResponse.MIMEType
+            {
+                XCTAssertEqual(HTTPResponse.statusCode, 200, "HTTP response status code should be 200")
+                XCTAssertEqual(MIMEType, "text/html", "HTTP response content type should be text/html")
+            } else {
+                XCTFail("Response was not NSHTTPURLResponse")
+            }
+            
+            expectation.fulfill()
+        }
+        
+        task.resume()
+        
+        waitForExpectationsWithTimeout(task.originalRequest.timeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            task.cancel()
         }
     }
     
