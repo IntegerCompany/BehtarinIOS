@@ -1,2 +1,4 @@
 general:
-build_dir: BehtarinTests
+test:
+minitest_globs:
+- BehtarinTests/BehtarinTests.swift

@@ -43,7 +43,7 @@ class BehtarinTests: XCTestCase {
                 MIMEType = HTTPResponse.MIMEType
             {
                 XCTAssertEqual(HTTPResponse.statusCode, 200, "HTTP response status code should be 200")
-                XCTAssertEqual(MIMEType, "text/html", "HTTP response content type should be text/html")
+                XCTAssertEqual(MIMEType, "application/json", "HTTP response content type should be application/json")
             } else {
                 XCTFail("Response was not NSHTTPURLResponse")
             }
