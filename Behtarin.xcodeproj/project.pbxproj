@@ -22,6 +22,7 @@
 		92869BF01B6F8E5800F15967 /* HotelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */; };
 		928B212F1B73695C00ABE2B1 /* ImageGallaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B212E1B73695C00ABE2B1 /* ImageGallaryViewController.swift */; };
 		92923E021B6A12770002A09B /* CosmosStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92923E011B6A12770002A09B /* CosmosStars.swift */; };
+		9295F4531B7E065400BC54FA /* circle.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9295F4521B7E065400BC54FA /* circle.yml */; };
 		9299BF261B6FFB7100599753 /* SingleHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299BF251B6FFB7100599753 /* SingleHotelViewController.swift */; };
 		92C9A61A1B69460700C05D64 /* MyDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9A6191B69460700C05D64 /* MyDelegates.swift */; };
 		92D75BCB1B7DFB5C00CB7DB5 /* BehtarinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920338D31B6796B500094A20 /* BehtarinTests.swift */; };
@@ -63,6 +64,7 @@
 		92869BEF1B6F8E5800F15967 /* HotelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelListViewController.swift; sourceTree = "<group>"; };
 		928B212E1B73695C00ABE2B1 /* ImageGallaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGallaryViewController.swift; sourceTree = "<group>"; };
 		92923E011B6A12770002A09B /* CosmosStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosStars.swift; sourceTree = "<group>"; };
+		9295F4521B7E065400BC54FA /* circle.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = circle.yml; sourceTree = "<group>"; };
 		9299BF251B6FFB7100599753 /* SingleHotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleHotelViewController.swift; sourceTree = "<group>"; };
 		92C9A6191B69460700C05D64 /* MyDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDelegates.swift; sourceTree = "<group>"; };
 		9DD9846AD5AD5775D0FE120E /* Pods_Behtarin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Behtarin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 		920338AF1B6796B500094A20 = {
 			isa = PBXGroup;
 			children = (
+				9295F4521B7E065400BC54FA /* circle.yml */,
 				920338BA1B6796B500094A20 /* Behtarin */,
 				920338D01B6796B500094A20 /* BehtarinTests */,
 				920338B91B6796B500094A20 /* Products */,
@@ -282,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9295F4531B7E065400BC54FA /* circle.yml in Resources */,
 				920338C31B6796B500094A20 /* Main.storyboard in Resources */,
 				920338C81B6796B500094A20 /* LaunchScreen.xib in Resources */,
 				920338C51B6796B500094A20 /* Images.xcassets in Resources */,
